@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKBAR Products</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="products">
+    <header className="topbar">
+      <div>
+        <h1>AKBAR Tea Products</h1>
+        <p>Staff pricing and selling price view</p>
+      </div>
+      <nav>
+        <a href="index.html">Access</a>
+        <a href="generate.html">Tokens</a>
+        <a href="products.html">Products</a>
+        <a href="orders.html">Orders</a>
+      </nav>
+    </header>
+
+    <main className="products-layout">
+      <section>
+        <h2>Product catalog</h2>
+        <div id="product-list" className="product-grid"></div>
+      </section>
+
+      <aside className="cart-card">
+        <h2>Order summary</h2>
+        <div id="cart-items" className="cart-items"></div>
+
+        <hr />
+
+        <form id="order-form">
+          <label for="employee-name">Employee name</label>
+          <input id="employee-name" name="employeeName" required />
+
+          <label for="customer-name">Customer name</label>
+          <input id="customer-name" name="customerName" required />
+
+          <label for="department">Department</label>
+          <input id="department" name="department" required />
+
+          <label for="designation">Designation</label>
+          <input id="designation" name="designation" required />
+
+          <label for="epf-number">EPF number</label>
+          <input id="epf-number" name="epfNumber" required />
+
+          <label for="contact-number">Mobile number</label>
+          <input id="contact-number" name="contactNumber" required />
+
+          <label for="order-number">Order number</label>
+          <input id="order-number" name="orderNumber" readonly required />
+
+          <label for="order-date">Order date</label>
+          <input id="order-date" name="orderDate" type="date" required />
+
+          <label for="order-time">Order need time</label>
+          <input id="order-time" name="orderTime" type="time" required />
+
+          <label>Payment method</label>
+          <div className="payment-options">
+            <label><input type="radio" name="paymentMethod" value="Cash" checked /> Cash</label>
+            <label><input type="radio" name="paymentMethod" value="Card" /> Card</label>
+            <label><input type="radio" name="paymentMethod" value="Bank transfer" /> Bank transfer</label>
+            <label><input type="radio" name="paymentMethod" value="Other" /> Other</label>
+          </div>
+
+          <div id="cash-fields" className="cash-fields">
+            <label for="given-amount">Given amount</label>
+            <input id="given-amount" name="givenAmount" type="number" step="0.01" />
+
+            <label for="balance-amount">Balance</label>
+            <input id="balance-amount" name="balanceAmount" readonly />
+          </div>
+
+          <button type="submit">Save order and export CSV</button>
+        </form>
+
+        <div id="order-msg" className="message" aria-live="polite"></div>
+      </aside>
+    </main>
+
+    <div id="receipt-modal" className="modal" hidden>
+      <div className="modal-card">
+        <div id="receipt-content"></div>
+        <div className="modal-actions">
+          <button id="print-receipt-btn" className="secondary">Print receipt</button>
+          <button id="close-receipt-btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AKBAR Staff Purchase Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="login">
+    <header class="topbar">
+      <div>
+        <h1>AKBAR Staff Purchase Portal</h1>
+        <p>Simple staff ordering for AKBAR tea products</p>
+      </div>
+      <nav>
+        <a href="index.html">Access</a>
+        <a href="generate.html">Tokens</a>
+        <a href="products.html">Products</a>
+        <a href="orders.html">Orders</a>
+      </nav>
+    </header>
+
+    <main className="card">
+      <h2>Enter your access token</h2>
+      <p>Only staff with a valid token can continue to the ordering page.</p>
+
+      <form id="access-form">
+        <label for="token-input">Token number</label>
+        <input id="token-input" name="token" placeholder="Enter token" required />
+        <button type="submit">Enter portal</button>
+      </form>
+
+      <div id="access-msg" className="message" aria-live="polite"></div>
+
+      <div className="hint-box">
+        <h3>Quick notes</h3>
+        <ul>
+          <li>Use a token created on the Tokens page.</li>
+          <li>Demo token: AKBAR-STAFF-ACCESS</li>
+          <li>Orders can be downloaded as CSV for record keeping.</li>
+        </ul>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

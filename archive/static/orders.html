@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order History</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="orders">
+    <header className="topbar">
+      <div>
+        <h1>Order history</h1>
+        <p>Saved orders and export view</p>
+      </div>
+      <nav>
+        <a href="index.html">Access</a>
+        <a href="generate.html">Tokens</a>
+        <a href="products.html">Products</a>
+        <a href="orders.html">Orders</a>
+      </nav>
+    </header>
+
+    <main className="card">
+      <div className="toolbar">
+        <input id="order-search" type="text" placeholder="Search by customer name, EPF, or order number" />
+        <button id="export-orders-btn" className="secondary">Export all orders</button>
+        <button id="clear-orders-btn">Clear history</button>
+      </div>
+
+      <div id="orders-msg" className="message" aria-live="polite"></div>
+      <div id="orders-list" className="orders-list"></div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
